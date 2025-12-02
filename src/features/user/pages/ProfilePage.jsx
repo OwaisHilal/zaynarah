@@ -1,9 +1,12 @@
+// src/features/user/pages/ProfilePage.jsx
 import UserProfile from '../components/UserProfile';
+import UserOrders from '../components/UserOrders';
+import UserAddresses from '../components/UserAddresses';
 
 export default function ProfilePage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex justify-center items-start py-20 px-4">
-      <div className="w-full max-w-4xl bg-white rounded-3xl shadow-2xl p-12 transition-transform duration-300 hover:scale-[1.01]">
+    <main className="min-h-screen bg-gray-50 flex flex-col items-center py-20 px-4 gap-8">
+      <div className="w-full max-w-4xl">
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
@@ -15,9 +18,21 @@ export default function ProfilePage() {
           </p>
         </div>
 
-        {/* User Profile Card */}
-        <div className="bg-linear-to-r from-gray-100 via-white to-gray-100 rounded-2xl p-8 shadow-inner border border-gray-200">
+        {/* Profile Section */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8">
           <UserProfile />
+        </div>
+
+        {/* Orders Section */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8 mt-8">
+          <h2 className="text-2xl font-semibold mb-4">My Orders</h2>
+          <UserOrders />
+        </div>
+
+        {/* Addresses Section */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8 mt-8">
+          <h2 className="text-2xl font-semibold mb-4">My Addresses</h2>
+          <UserAddresses />
         </div>
       </div>
     </main>
